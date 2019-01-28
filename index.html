@@ -248,9 +248,23 @@ function initUI(){
 </script>
 </head>
 <body>
-<h1>Teste de velocidade de internet - Renet-CE </h1>
 <div id="startStopBtn" onclick="startStop()"></div>
 <div id="test">
+	<div class="testGroup">
+		<div class="testArea">
+			<div class="testName">Ping</div>
+			<canvas id="pingMeter" class="meter"></canvas>
+			<div id="pingText" class="meterText"></div>
+			<div class="unit">ms</div>
+		</div>
+		<div class="testArea" style="display:none">
+			<div class="testName">Jitter</div>
+			<canvas id="jitMeter" class="meter"></canvas>
+			<div id="jitText" class="meterText"></div>
+			<div class="unit">ms</div>
+		</div>
+	</div>
+	
 	<div class="testGroup">
 		<div class="testArea">
 			<div class="testName">Download</div>
@@ -265,20 +279,7 @@ function initUI(){
 			<div class="unit">Mbps</div>
 		</div>
 	</div>
-	<div class="testGroup">
-		<div class="testArea">
-			<div class="testName">Ping</div>
-			<canvas id="pingMeter" class="meter"></canvas>
-			<div id="pingText" class="meterText"></div>
-			<div class="unit">ms</div>
-		</div>
-		<div class="testArea">
-			<div class="testName">Jitter</div>
-			<canvas id="jitMeter" class="meter"></canvas>
-			<div id="jitText" class="meterText"></div>
-			<div class="unit">ms</div>
-		</div>
-	</div>
+	
 	<div id="ipArea">
 		IP: <span id="ip"></span>
 	</div>
