@@ -2,7 +2,7 @@
 
 	require "conn.php";
 
-	//header('Content-Type: application/json; charset=utf-8');
+	header('Content-Type: application/json; charset=utf-8');
 
 	function check_type_login(){
 		global $conn;
@@ -41,16 +41,16 @@
 
 	function response_user($result){
 		if($result == null || mysqli_num_rows($result) <= 0){
-			//return array('error' => UNEXISTENT_USER );
-			return "falha";
+			return array('error' => UNEXISTENT_USER );
+			//return "falha";
 		}
 
-		//$row = mysqli_fetch_assoc($result);
+		$row = mysqli_fetch_assoc($result);
 		
-		//$response -> error = SUCESS;
-		//$response -> name = $row['nome'];
-		return 'sucesso';
-		//return $response;
+		$response -> error = SUCESS;
+		$response -> name = $row['nome'];
+		
+		return $response;
 	}
 
 	function response_for($user_name, $user_password){
